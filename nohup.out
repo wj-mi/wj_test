@@ -1,0 +1,59 @@
+[22/Sep/2017 15:10:20] "GET /demo/index/ HTTP/1.1" 200 7
+Not Found: /favicon.ico
+[22/Sep/2017 15:10:20] "GET /favicon.ico HTTP/1.1" 404 2075
+Internal Server Error: /demo/register
+Traceback (most recent call last):
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.190.203.238:7000/demo/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[22/Sep/2017 15:30:38] "POST /demo/register HTTP/1.1" 500 62523
+Internal Server Error: /demo/register
+Traceback (most recent call last):
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 118.190.203.238:7000/demo/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[22/Sep/2017 15:31:12] "POST /demo/register HTTP/1.1" 500 62523
+[22/Sep/2017 15:34:54] "POST /demo/register/ HTTP/1.1" 200 30
+[22/Sep/2017 15:35:26] "POST /demo/login/ HTTP/1.1" 200 110
+[22/Sep/2017 15:35:33] "POST /demo/login/ HTTP/1.1" 200 110
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 22, 2017 - 15:08:31
+Django version 1.11.5, using settings 'wj_test.settings'
+Starting development server at http://0.0.0.0:7000/
+Quit the server with CONTROL-C.
+{u'username': u'wj2', u'password': u'wj2'}
+register args:  {u'username': u'wj2', u'password': u'wj2'}
+wj2
+wj1 wj1
+--pass check :  True
+wj1 wj2
+--pass check :  False
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 22, 2017 - 15:37:40
+Django version 1.11.5, using settings 'wj_test.settings'
+Starting development server at http://0.0.0.0:7000/
+Quit the server with CONTROL-C.
+[22/Sep/2017 15:39:20] "POST /demo/login/ HTTP/1.1" 200 72
+[22/Sep/2017 15:39:27] "POST /demo/login/ HTTP/1.1" 200 110
+[22/Sep/2017 15:39:32] "POST /demo/login/ HTTP/1.1" 200 72
+[22/Sep/2017 15:39:38] "POST /demo/login/ HTTP/1.1" 200 110
+[22/Sep/2017 15:40:12] "POST /demo/register/ HTTP/1.1" 200 30
+[22/Sep/2017 15:40:28] "POST /demo/login/ HTTP/1.1" 200 110
+[22/Sep/2017 15:40:33] "POST /demo/login/ HTTP/1.1" 200 72
+[22/Sep/2017 15:40:42] "POST /demo/login/ HTTP/1.1" 200 72

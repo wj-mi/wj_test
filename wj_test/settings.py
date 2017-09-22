@@ -26,7 +26,7 @@ SECRET_KEY = 'xmw-v#-*rma7f=qicc@17f-zpyg+u(#q4&u7qbb*^**no(3vyv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.124', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.0.124', '127.0.0.1', '0.0.0.0', '118.190.203.238']
 
 
 # Application definition
@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wj_test',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': 'root',
         'HOST': '127.0.0.1'
     }
 }

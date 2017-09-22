@@ -38,10 +38,9 @@ def login(req):
     args = json.loads(req.body)
     name = args.get('username', '')
     passwd = args.get('password', '')
-    print name, passwd
+    print 'lgin name and passwd: ',name, passwd
     user = User.objects.filter(name=name)[0]
-    if user:
-        print '--pass check : ', user.check_passwd(passwd)
+    if user and user.check_passwd(passwd):
         return HttpResponse(json.dumps({'code':1, 'data': UserSer(user).data}),
                             content_type='application/json')
     return HttpResponse(json.dumps({'code': -1, 'data': u'用户名或密码错误'}),
