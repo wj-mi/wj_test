@@ -23,4 +23,5 @@ class UserSer(serializers.Serializer):
     type = serializers.IntegerField()
     enterTime = serializers.DateTimeField()
     qq = serializers.CharField(max_length=20)
+    avatar = serializers.ImageField()
 
