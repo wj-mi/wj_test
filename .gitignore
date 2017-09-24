@@ -1,2 +1,9 @@
 *.pyc
+<<<<<<< HEAD
 *.pyc
+=======
+setting.py
+venv
+nohup.out
+>>>>>>> 6473ce4793f7b9aa55fce743543d940e0a397d6e
+demo/migrations/*

@@ -27,7 +27,6 @@ def index(req):
 @csrf_exempt
 def register(req):
     args = json.loads(req.body)
-    print type(args), args
     if args:
         print 'register args: ', args
         name = args.pop('username')
@@ -36,8 +35,9 @@ def register(req):
         if user:
             return HttpResponse(json.dumps({'code': -1, 'data': u'用户名已被注册'}),
                                 content_type='application/json')
-        print passwd
         user = User.objects.create_user(name, passwd)
+        if user:
+            return HttpResponse(json.dumps({'code': -1, 'data': u'用户名已被注册'}), content_type='application/json')
         return HttpResponse(json.dumps({'code': 1, 'data': 'success'}),
                             content_type='application/json')
     return HttpResponse(json.dumps({'code': -1, 'data': 'args error!'}),
@@ -49,13 +49,9 @@ def per_login(req):
     args = json.loads(req.body)
     name = args.get('username', '')
     passwd = args.get('password', '')
-    print name, passwd, type(passwd)
     user = authenticate(name=name, password=passwd)
-    # user = User.objects.filter(name=name)[0]
     if user is not None:
-        print '-------'
         login(req, user)
-        print 'login success: ', user, req.user
         data = {'code': 1, 'data': UserSer(user).data}
         return HttpResponse(JSONRenderer().render(data))
     return HttpResponse(json.dumps({'code': -1, 'data': u'用户名或密码错误'}),
