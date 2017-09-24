@@ -2,3 +2,4 @@
 setting.py
 venv
 nohup.out
+demo/migrations/*
