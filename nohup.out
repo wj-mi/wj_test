@@ -86,3 +86,12 @@ Invalid HTTP_HOST header: u'iZm5e1h7c6rjthntygmlk8Z:7000'. You may need to add u
 [23/Sep/2017 13:58:41] "POST /demo/login/ HTTP/1.1" 200 110
 Invalid HTTP_HOST header: u'iZm5e1h7c6rjthntygmlk8Z:7000'. You may need to add u'izm5e1h7c6rjthntygmlk8z' to ALLOWED_HOSTS.
 [23/Sep/2017 17:13:58] "GET / HTTP/1.0" 400 60423
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 22, 2017 - 16:07:24
+Django version 1.11.5, using settings 'wj_test.settings'
+Starting development server at http://0.0.0.0:7000/
+Quit the server with CONTROL-C.
+lgin name and passwd:  wj1 wj1
+lgin name and passwd:  wj1 wj1

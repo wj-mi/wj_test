@@ -1,3 +1,4 @@
 *.pyc
 setting.py
 venv
+nohup.out
