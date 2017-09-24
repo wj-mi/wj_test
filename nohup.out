@@ -57,3 +57,32 @@ Quit the server with CONTROL-C.
 [22/Sep/2017 15:40:28] "POST /demo/login/ HTTP/1.1" 200 110
 [22/Sep/2017 15:40:33] "POST /demo/login/ HTTP/1.1" 200 72
 [22/Sep/2017 15:40:42] "POST /demo/login/ HTTP/1.1" 200 72
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 22, 2017 - 15:39:14
+Django version 1.11.5, using settings 'wj_test.settings'
+Starting development server at http://0.0.0.0:7000/
+Quit the server with CONTROL-C.
+lgin name and passwd:  wj1 wj2
+lgin name and passwd:  wj1 wj1
+lgin name and passwd:  wj2 wj1
+lgin name and passwd:  wj2 wj2
+{u'username': u'wj4', u'password': u''}
+register args:  {u'username': u'wj4', u'password': u''}
+
+lgin name and passwd:  wj4 
+lgin name and passwd:  wj4 12
+lgin name and passwd:  wj1 
+Unhandled exception in thread started by <function wrapper at 0x7f3229c6a1b8>
+Traceback (most recent call last):
+  File "/home/ilike/wj_test/venv/local/lib/python2.7/site-packages/django/utils/autoreload.py", line 236, in wrapper
+    filename = traceback.extract_tb(tb)[-1][0]
+TypeError: 'NoneType' object is not callable
+Invalid HTTP_HOST header: u'iZm5e1h7c6rjthntygmlk8Z:7000'. You may need to add u'izm5e1h7c6rjthntygmlk8z' to ALLOWED_HOSTS.
+[22/Sep/2017 17:14:17] "GET / HTTP/1.0" 400 60424
+[23/Sep/2017 01:54:08] "GET /demo/index/ HTTP/1.1" 200 7
+[23/Sep/2017 13:54:12] "POST /demo/login/ HTTP/1.1" 200 110
+[23/Sep/2017 13:58:41] "POST /demo/login/ HTTP/1.1" 200 110
+Invalid HTTP_HOST header: u'iZm5e1h7c6rjthntygmlk8Z:7000'. You may need to add u'izm5e1h7c6rjthntygmlk8z' to ALLOWED_HOSTS.
+[23/Sep/2017 17:13:58] "GET / HTTP/1.0" 400 60423

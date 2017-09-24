@@ -22,8 +22,12 @@ def register(req):
     print args
     if args:
         print 'register args: ', args
+        name = args.get('username')
         passwd = args.pop('password')
         print passwd
+        user = User.objects.filter(name=name)
+        if user:
+            return HttpResponse(json.dumps({'code': -1, 'data': u'用户名已被注册'}), content_type='application/json')
         user = User.objects.create(name=args.get('username'))
         user.passwd_hash(passwd)
         user.save()
