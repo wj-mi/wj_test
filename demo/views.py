@@ -22,6 +22,9 @@ from ser_model import UserSer
 # Create your views here.
 
 
+def _json_response(data):
+    return JSONRenderer().render(data)
+
 
 def index(req):
     return HttpResponse("welcome")
@@ -36,11 +39,11 @@ def register(req):
         passwd = args.pop('password')
         user = User.objects.filter(name=name)
         if user:
-            return HttpResponse(json.dumps({'code': -1, 'data': u'用户名已被注册'}),
-                                content_type='application/json')
+            return HttpResponse(_json_response({'code': -1, 'data': u'用户名已被注册'}))
         user = User.objects.create_user(name, passwd)
-        return Response({'code': 1, 'data': 'success'})
-    return Response({'code': -1, 'data': 'args error!'})
+        print '----user', user
+        return HttpResponse(_json_response({'code': 1, 'data': 'success'}))
+    return HttpResponse(_json_response({'code': -1, 'data': 'args error!'}))
 
 
 # @csrf_exempt
@@ -80,7 +83,7 @@ class UserView(APIView):
             data = {'code': -1, 'data': u'你还没有登录哟'}
         else:
             data = {'code': 1, 'data': UserSer(user).data}
-        return Response(data)
+        return HttpResponse(_json_response(data))
         # return HttpResponse(_json_serialize(data))
 
     @csrf_exempt
@@ -97,7 +100,7 @@ class UserView(APIView):
             user.avatar = req.FILES.get('avatar', '')
         user.save()
         data = {'code': 1, 'data': UserSer(user).data}
-        return Response(data)
+        return HttpResponse(_json_response(data))
 
 
 def LogOut(req):
