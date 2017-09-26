@@ -36,8 +36,6 @@ def register(req):
             return HttpResponse(json.dumps({'code': -1, 'data': u'用户名已被注册'}),
                                 content_type='application/json')
         user = User.objects.create_user(name, passwd)
-        if user:
-            return HttpResponse(json.dumps({'code': -1, 'data': u'用户名已被注册'}), content_type='application/json')
         return HttpResponse(json.dumps({'code': 1, 'data': 'success'}),
                             content_type='application/json')
     return HttpResponse(json.dumps({'code': -1, 'data': 'args error!'}),
