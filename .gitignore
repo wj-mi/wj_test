@@ -4,3 +4,5 @@ venv
 nohup.out
 demo/migrations/*
 wj_test/settings.py
+nohup.out
+media
