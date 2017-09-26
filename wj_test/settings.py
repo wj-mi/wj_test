@@ -26,7 +26,7 @@ SECRET_KEY = 'xmw-v#-*rma7f=qicc@17f-zpyg+u(#q4&u7qbb*^**no(3vyv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.124', '127.0.0.1', '0.0.0.0', '118.190.203.238']
+ALLOWED_HOSTS = ['192.168.0.128', '127.0.0.1', '0.0.0.0', '118.190.203.238']
 
 
 # Application definition
@@ -39,8 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'demo',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework.authtoken',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'wj_test',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1'
     }
 }
