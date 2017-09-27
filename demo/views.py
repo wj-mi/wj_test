@@ -89,12 +89,15 @@ class UserView(APIView):
     @csrf_exempt
     def put(self, req):
         user = req.user
-        try:
-            args = json.loads(req.body)
+        args = json.loads(req.body)
+        if args:
+            name = args.get('username', '')
+            if name:
+                obj = User.objects.filter(name=name)
+                if obj:
+                    return HttpResponse(_json_response({"code": -1, "data": u"用户名已被注册"}))
             for k, v in args.items():
                 setattr(user, k, v)
-        except ValueError:
-            print '-------value error'
         if req.FILES:
             print 'file: ', dict(req.FILES)
             user.avatar = req.FILES.get('avatar', '')
